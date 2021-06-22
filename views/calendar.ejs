@@ -1,36 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        table, th, td { border: 1px solid black; }
-        body { padding-left: 200px; padding-top: 100px; }
-        table {
-            border-collapse:
-            separate;
-            border-spacing: 5px;
-            background-color: whitesmoke;
-        }
-        th, td { padding: 30px; }
-        th { font-size: 23px; }
-        td:hover,th:hover { background-color: #555555; color: white; }
-        td:active,th:active { background-color: gray; color: white; }
-        td {
-            font-size: 15px;
-            font-weight: bold;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        #header { cursor: pointer; }
-        #myDays { background-color:#d7d9dd }
-        #myDate{ color: #0a2d44; font-family: Helvetica, Arial, sans-serif; }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <title>Calender | App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title> Calender </title>
+    <script></script>
 </head>
 <body>
-    <table id="calendar">
+    <table class = "centered" id="calendar">
         <tr id="header">
             <th id="yearBefore"><strong>&#8810;</strong></th>
             <th id="monthBefore"><strong>&#60;</strong></th>
@@ -98,9 +78,13 @@
             <td id="i41"><%=i41%></td>
         </tr>
     </table>
+    
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    
     <script>
         /* handle calendar navigation */
-
         let the_month = <%=my_month%>
         let the_year = <%=my_year%>
 
