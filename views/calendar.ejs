@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td { border: 1px solid black; }
+        body { padding-left: 200px; padding-top: 100px; }
+        table {
+            border-collapse:
+            separate;
+            border-spacing: 5px;
+            background-color: whitesmoke;
+        }
+        th, td { padding: 30px; }
+        th { font-size: 23px; }
+        td:hover,th:hover { background-color: #555555; color: white; }
+        td:active,th:active { background-color: gray; color: white; }
+        td {
+            font-size: 15px;
+            font-weight: bold;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #header { cursor: pointer; }
+        #myDays { background-color:#d7d9dd }
+        #myDate{ color: #0a2d44; font-family: Helvetica, Arial, sans-serif; }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Calender | App</title>
+</head>
+<body>
+    <table id="calendar">
+        <tr id="header">
+            <th id="yearBefore"><strong>&#8810;</strong></th>
+            <th id="monthBefore"><strong>&#60;</strong></th>
+            <th id = "myDate" colspan= "3"><strong><%=monthYear%></strong></th>
+            <th id="monthAfter"><strong>&#62;</strong></th>
+            <th id="yearAfter"><strong>&#8811;</strong></th>
+        </tr>
+        <tr id="myDays">
+            <td><strong>SU</strong></td><td><strong>MO</strong></td> <td><strong>TU</strong></td>
+            <td><strong>WE</strong></td><td><strong>TH</strong></td> <td><strong>FR</strong></td>
+            <td><strong>SA</strong></td>
+        </tr>
+        <tr>
+            <td><%=i0%></td>
+            <td><%=i1%></td>
+            <td><%=i2%></td>
+            <td><%=i3%></td>
+            <td><%=i4%></td>
+            <td><%=i5%></td>
+            <td><%=i6%></td>
+        </tr>
+        <tr>
+            <td><%=i7%></td>
+            <td><%=i8%></td>
+            <td><%=i9%></td>
+            <td><%=i10%></td>
+            <td><%=i11%></td>
+            <td><%=i12%></td>
+            <td><%=i13%></td>
+        </tr>
+        <tr>
+            <td><%=i14%></td>
+            <td><%=i15%></td>
+            <td><%=i16%></td>
+            <td><%=i17%></td>
+            <td><%=i18%></td>
+            <td><%=i19%></td>
+            <td><%=i20%></td>
+        </tr>
+        <tr>
+            <td><%=i21%></td>
+            <td><%=i22%></td>
+            <td><%=i23%></td>
+            <td><%=i24%></td>
+            <td><%=i25%></td>
+            <td><%=i26%></td>
+            <td><%=i27%></td>
+        </tr>
+        <tr>
+            <td><%=i28%></td>
+            <td><%=i29%></td>
+            <td><%=i30%></td>
+            <td><%=i31%></td>
+            <td><%=i32%></td>
+            <td><%=i33%></td>
+            <td><%=i34%></td>
+        </tr>
+        <tr>
+            <td id="i35"><%=i35%></td>
+            <td id="i36"><%=i36%></td>
+            <td id="i37"><%=i37%></td>
+            <td id="i38"><%=i38%></td>
+            <td id="i39"><%=i39%></td>
+            <td id="i40"><%=i40%></td>
+            <td id="i41"><%=i41%></td>
+        </tr>
+    </table>
+    <script>
+        /* handle calendar navigation */
+
+        let the_month = <%=my_month%>
+        let the_year = <%=my_year%>
+
+        $('#yearBefore').click(function () {
+            the_year -= 1;
+            the_year = Math.abs(the_year);
+            window.location.href = "http://localhost:3000/calendar?month=" + the_month + "&year=" + the_year;
+        });
+        $('#yearAfter').click(function () {
+            the_year += 1;
+            the_year = Math.abs(the_year);
+            window.location.href = "http://localhost:3000/calendar?month=" + the_month + "&year=" + the_year;
+        });
+        $('#monthBefore').click(function () {
+            the_month -= 1;
+            the_month = Math.abs(the_month);
+
+            if (the_month >= 1)
+                window.location.href = "http://localhost:3000/calendar?month=" + the_month + "&year=" + the_year;
+            else
+                the_month = 1;
+        });
+        $('#monthAfter').click(function () {
+            the_month += 1;
+            the_month = Math.abs(the_month);
+
+            if (the_month <= 12)
+                window.location.href = "http://localhost:3000/calendar?month=" + the_month + "&year=" + the_year;
+            else
+                the_month = 12;
+        });
+    </script>
+    <script>
+        /* highlight the current day */
+        let count = 0;
+        let empty = " ";
+        let condition = 0;
+
+        $('td').each(function () {
+            if ( $(this).text() == <%=d_current%> && (<%=isMonth%> == true)) {
+                $(this).css("background-color", "red");
+            }
+
+            /* hide the potential empty row. */
+            if ( $('#i35').text() == empty && condition == 0) {
+                condition = 1;
+                $('#i35').hide();
+                $('#i36').hide();
+                $('#i37').hide();
+                $('#i38').hide();
+                $('#i39').hide();
+                $('#i40').hide();
+                $('#i41').hide();
+            }
+            count++;
+        });
+    </script>
+</body>
+</html>
