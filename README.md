@@ -1,6 +1,17 @@
-# Calendar-App
+<br />
+<p align="center">
+  <h3 align="center"> Calendar-App </h3>
 
-EJS - Node Calendar Web App
+  <p align="center">
+      EJS - Node Calendar Web App <br />
+    <a href="https://blakley.github.io/CodePunch/"><strong>« —— Try It  ——»</strong></a>
+    <br />
+  </p>
+</p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/7Piyv2xtfPYBKB4vTt/giphy.gif" width=500>
+</p>
 
 ---
 ## Requirements
