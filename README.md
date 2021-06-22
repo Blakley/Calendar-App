@@ -4,8 +4,6 @@
 
   <p align="center">
       EJS - Node Calendar Web App <br />
-    <a href="https://blakley.github.io/CodePunch/"><strong>« —— Try It  ——»</strong></a>
-    <br />
   </p>
 </p>
 
