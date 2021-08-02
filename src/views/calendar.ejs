@@ -5,9 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
     <title> Calender </title>
     <script></script>
+    <!-- CSS -->
+    <style>
+        body { 
+            padding-left: 200px; padding-top: 100px; 
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .centered {
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            border-collapse:
+            separate;
+            border-spacing: 5px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black; 
+        }
+
+        th, td {
+            padding: 30px; 
+        }
+
+        th {
+            font-size: 23px; 
+            border-radius: 10px;
+        }
+
+        #calendar {
+            cursor: pointer;
+        }
+
+        td:hover,th:hover {
+            background-color: #555555; color: white; 
+        }
+
+        td:active,th:active {
+            background-color: gray; color: white; 
+        }
+
+        td {
+            font-size: 45px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        #header { cursor: pointer; }
+        #myDays { background-color:#d7d9dd }
+        #myDate{ color: #0a2d44; font-family: Helvetica, Arial, sans-serif; }
+
+        html {
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #a2abb3 0%, #8d9399 100%);
+            overflow: hidden;
+        }
+        
+        #title {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            color: #FFF;
+            text-align: center;
+            font-family: "lato", sans-serif;
+            font-weight: 300;
+            font-size: 50px;
+            letter-spacing: 10px;
+            margin-top: -60px;
+            padding-left: 10px;
+        }
+        #title span {
+            background: -webkit-linear-gradient(white, #38495a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+    </style>
 </head>
 <body>
     <table class = "centered" id="calendar">
@@ -77,12 +160,7 @@
             <td id="i40"><%=i40%></td>
             <td id="i41"><%=i41%></td>
         </tr>
-    </table>
-    
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
-    
+    </table>    
     <script>
         /* handle calendar navigation */
         let the_month = <%=my_month%>

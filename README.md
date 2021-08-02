@@ -2,9 +2,9 @@
 
 EJS - Node Calendar Web Application
 
-## Demo <a href="https://blakley.github.io/Game-Of-Fifteen/"></a>
+## Demo
 <p align="">
-  <img src="https://media.giphy.com/media/7Piyv2xtfPYBKB4vTt/giphy.gif" width=500>
+  <img src="https://media.giphy.com/media/HG2Iq3Xc1qGI5NN4JX/giphy.gif" width=500>
 </p>
 
 
