@@ -1,6 +1,6 @@
 # Web Calendar
 
-EJS - Node Calendar Web Application
+EJS - Calendar Web Application
 
 ## Demo
 <p align="">
